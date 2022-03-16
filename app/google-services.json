@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "174235273375",
+    "project_id": "mobilelab-todoapp",
+    "storage_bucket": "mobilelab-todoapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:174235273375:android:ff9ca163d7cbbbac67baaa",
+        "android_client_info": {
+          "package_name": "th.ac.kku.cis.todoapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "174235273375-e6ohhd1i72ed7r8qc5eeljsid7jhcf0q.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDebKrEkIPpWA-Pe-Z8X-zZNL7gDSZs7pI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "174235273375-e6ohhd1i72ed7r8qc5eeljsid7jhcf0q.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
