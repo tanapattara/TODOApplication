@@ -3,11 +3,14 @@ package th.ac.kku.cis.todoapplication
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.Menu
+import android.view.MenuItem
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ListView
 import androidx.appcompat.app.AlertDialog
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
@@ -84,7 +87,7 @@ class MainActivity : AppCompatActivity(), ListViewListener {
     }
 
     override fun onUpdateItem(itemId: String, index: Int, isDone: Boolean) {
-        Log.d("TODOAPPLICATION", "onUpdateItem")
+        Log.d("item.itemId ", "onUpdateItem")
 
         var item = db.child("todo_item").child(itemId)
         item.child("done").setValue(isDone)
@@ -100,5 +103,24 @@ class MainActivity : AppCompatActivity(), ListViewListener {
 
         listData.removeAt(index)
         adapter.notifyDataSetChanged()
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.menu_main_activity, menu)
+        return true
+        //return super.onCreateOptionsMenu(menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when(item.itemId){
+            R.id.menu_item_logout -> {
+                FirebaseAuth.getInstance().signOut()
+                finish()
+            }
+            R.id.menu_item_profile -> {
+                Log.d("TODOAPPLICATION", "onOptionsItemSelected, Profile cliecked")
+            }
+        }
+        return super.onOptionsItemSelected(item)
     }
 }
